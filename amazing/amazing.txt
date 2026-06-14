@@ -1,0 +1,191 @@
+# Maze Generator
+
+# TODO
+- Project must be written in Python 3.10 or later
+- Must adhere to the flake8 coding standard.
+- Functions should handle exceptions gracefully to avoid crashes. 
+	- Use try-except blocks to manage potential errors. 
+	- Prefer context managers for resources like files or connections to ensure automatic cleanup. 
+	- If your program crashes due to unhandled exceptions during the review, it will be considered non-functional.
+
+MAZE SOLVER ALGORITHMS
+- BFS algorithm - Breadth-First Search.
+	- Graph traveral algorithm exploring nodes level by level.
+	- Starts from a source vertex and visits all adjacent nodes before moving to the next depth.
+	- Uses queue data structure to tract vertices.
+	- FIFO
+	g(n) = distane(n), height(n) == 0.
+	
+- DFS algorithm - Depth-First Search.
+	- Utilizes a queue to explore all neighbor cells level by level.
+	- This approach guarantees the shortest path in an unweighted maze.
+	- Ideal for navigation tasks where efficiency in step count is critical.
+	- Uses stack data structure.
+	- LIFO
+	g(n) = depth(n), height(n) == 0.
+	- DFS is a graph/tree traversal algorithm hat follows a path as far as it can until it reaches its goal or has nowhere else to go.
+	- DFS does not care about the shortest path but rather that there even is a path.
+	- In order to find the shortest path, look into Dijkstra’s algorithm.
+	- 
+
+- A* algorithm - Informed search algorithm or a best-first search. 
+	- It is formulated in terms of weighted graphs: starting from a specific starting node of a graph. 
+	- It aims to find a path to the given goal node having the smallest cost.
+	- g(n) = costFromStart(n), height(n) = heuristic(n).
+	Heuristic:
+		- formulation serving as a guide in the investigation or solution of a problem.
+
+- Dijkstra’s algorithm,
+
+- Use hexidecimal digits to encode the walls and passages of a maze.
+- Each 16 digits represent a boarder of the wall.
+- Each hexidecimal digit should be translated to their binray values.
+- 1 = 0001
+ 0
+1 0
+ 0
+
+- 2 = 0010
+ 0
+0 0
+ 1
+
+- 3 = 0011
+ 0
+1 0
+ 1
+
+- 4 = 0100
+ 0
+0 1
+ 0
+
+- 5 = 0101
+ 0
+1 1
+ 0
+etc...
+- 6 = 0110
+- 7 = 0111
+- 8 = 1000
+- 9 = 1001
+- A = 1010
+- B = 1011
+- C = 1100
+- D = 1101
+- E = 1110
+- F = 1111
+- Each wall will be represented by 0 being the opening and 1 being the wall.
+- Each binary digit will start from the top of the cube and then go clockwise (TO THE RIGHT).
+
+
+MAZE EXAMPLE 5x5
+ABCDE
+EDCBA
+14342
+12432
+52352
+
+MAZE EXAMPLE 3x3
+563
+A5F
+6BE
+
+ 0  0  0
+1 10 11 0
+ 0  1  1
+ 1
+
+
+ALGORITHMS USE:
+- backtracker
+- Prim's
+- Kruskal's
+- BFS
+- Animated Pathfinding and interactive play mode
+- Bitmap Font and sprite Rendering
+
+
+
+References:
+https://programmingteam.cc.gatech.edu/contest/MC2014/problems/maze.html
+- DFS vs BFD deep understanding:
+https://www.puppygraph.com/blog/depth-first-search-vs-breadth-first-search
+
+####
+####
+####
+####
+
+- Each cell has 4 walls (north, south, east, west).
+- Each cell should be a 4 bit integer.
+- Bit 0 = North
+- Bit 1 = East
+- Bit 2 = South
+- Bit 3 = West
+- 1111 = all walls are closed.
+- 1010 = east and west are closed.
+- 0000 = no walls.
+
+# How to solve
+1. 
+
+# Structure Architect
+
+│
+├── a_maze_ing.py
+├── parser.py
+├── maze.py
+├── generator.py
+├── solver.py
+├── renderer.py
+├── serializer.py
+├── config.txt
+├── tests/
+└── README.md
+
+
+
+# GIT BRANCHES
+- Head branch - the currently active or the checked out branch.
+- there can be many branches in your repository, but there can only be one that is active at a single time. 
+- if you hit git ststaus, you will see you are on a certain branch
+	- On branch <>
+
+- Local and remote branches.
+- 95% of the time work with local branch
+
+## How to create a new branch:
+- git branch new-branch
+
+## How to switch branch
+- git checkout new-branch
+- git switch new-branch
+
+## Renaming branches
+Renaming the current head branch
+- git branch -m new-name
+
+- How to merge 
+- Merging is putting forked histort together.
+- git merge = takes independent lines of developwnt createed by gir branch and integrates them into a single branch.
+
+- Create and switch: git checkout -b <branch-name> creates a new branch and moves you to it. 
+- List branches: git branch shows all local branches, with an asterisk (*) marking the current one. 
+	- The git branch command only created a new branch — it didn’t switch to that branch.
+- Switch branches: git checkout <branch-name> moves your working directory to the specified branch. 
+- Merge changes: git merge <branch-name> combines changes from another branch into your active branch. 
+- Delete branch: git branch -d <branch-name> safely deletes a merged branch; use -D to force delete unmerged ones. 
+- git log = You can easily see this by running a simple git log command that shows you where the branch pointers are pointing. This option is called --decorate.
+
+
+- git show (commit hash) = shows us what was added into the file.
+- 
+
+
+- Branching means you diverge from the main line of development and continue to do work without messing with that main line.
+
+
+# Resources:
+https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+
