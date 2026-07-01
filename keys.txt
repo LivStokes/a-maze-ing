@@ -1,0 +1,3 @@
+s = solve
+g = generate
+c = color
